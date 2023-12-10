@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 const Person = (props) => {
@@ -16,6 +16,11 @@ const App = () => {
   const [counter, setCounter] =useState(0);
   const name = 'Aaditya';
   const isNameShowing = true;
+  
+  useEffect(() => {
+    alert('You have changes the counter to ' + counter);
+  }, [counter]);
+
   return (
     <div className="App">
       <Person 
